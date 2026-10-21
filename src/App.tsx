@@ -15,6 +15,7 @@ import { LoginPage } from './components/LoginPage';
 import { WorkspaceApp } from './components/WorkspaceApp';
 import { PrelimsMiniTestModal } from './components/PrelimsMiniTestModal';
 import { LiveAspirantTicker } from './components/LiveAspirantTicker';
+import { InteractiveShowcase } from './components/InteractiveShowcase';
 import { CheckCircle2, X } from 'lucide-react';
 
 type AppView = 'landing' | 'login' | 'workspace';
@@ -224,7 +225,12 @@ export default function App() {
           onStartLiveMock={() => setTestModalOpen(true)}
         />
 
-        {/* 3. Testimonials & Verified Topper Social Proof */}
+        {/* 3. Live Interactive AI Demonstration (Top 0.1% Hackathon Showcase) */}
+        <InteractiveShowcase
+          onLaunchWorkspaceTool={handleLaunchWorkspaceTool}
+        />
+
+        {/* 4. Testimonials & Verified Topper Social Proof */}
         <Testimonials />
 
         {/* 4. Comparison with Traditional Coaching */}

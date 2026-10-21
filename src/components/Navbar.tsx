@@ -20,6 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { id: 'features', label: 'Key Features' },
+    { id: 'interactive-demo', label: 'Live AI Demo' },
     { id: 'how-it-works', label: 'How It Works' },
     { id: 'rankers', label: 'Topper Proof' },
     { id: 'comparison', label: 'Why UPSC ZONE AI' },
