@@ -4,6 +4,14 @@
 
 **The Cognitive Command Center for Serious UPSC Civil Services (CSE 2026–2027) Aspirants**
 
+<br />
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-upsc--zone--ai--snowy.vercel.app-b45309?style=for-the-badge&logo=vercel)](https://upsc-zone-ai-snowy.vercel.app/)
+
+**🌐 Live Submission URL:** [https://upsc-zone-ai-snowy.vercel.app/](https://upsc-zone-ai-snowy.vercel.app/)
+
+<br />
+
 [![React 19](https://img.shields.io/badge/React-19.0-1c1917?style=flat-square&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-1c1917?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.3-b45309?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
@@ -247,3 +255,12 @@ npm run lint
 # 4. Build optimized production bundle (outputs to /dist)
 npm run build
 ```
+
+---
+
+## 8. Live Hackathon Submission
+
+- **Live URL**: [https://upsc-zone-ai-snowy.vercel.app/](https://upsc-zone-ai-snowy.vercel.app/)
+- **Hosting Platform**: Vercel (Automated CI/CD linked to GitHub `main` branch)
+- **Challenge**: [Web Home UI Designer Challenge | UPSC ZONE AI (Unstop)](https://unstop.com/hackathons/web-home-ui-designer-challenge-upsc-zone-ai-1764477)
+
