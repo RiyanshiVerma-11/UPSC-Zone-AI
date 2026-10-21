@@ -146,11 +146,11 @@ export const Hero: React.FC<HeroProps> = ({
                   RP
                 </div>
                 <div className="w-7 h-7 rounded-full bg-stone-700 text-stone-200 border-2 border-white flex items-center justify-center font-bold text-[10px]">
-                  +14k
+                  +48k
                 </div>
               </div>
               <div>
-                <span className="font-semibold text-stone-900">14,800+ Aspirants</span>
+                <span className="font-semibold text-stone-900">48,000+ Aspirants</span>
                 <span className="text-stone-400 mx-1">·</span>
                 <span className="text-stone-500">Old Rajinder Nagar, Mukherjee Nagar & across India</span>
               </div>

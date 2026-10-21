@@ -16,9 +16,9 @@ export const ComparisonTable: React.FC = () => {
       unassisted: 'Personal guesswork'
     },
     {
-      parameter: 'Annual Cost to Aspirant',
-      upscZone: 'Democratized (₹0 free tier / ₹1,499 yr)',
-      traditionalCoaching: '₹1,80,000 – ₹2,50,000 + Delhi rent',
+      parameter: 'Aspirant Cost & Accessibility',
+      upscZone: 'Accessible to all (Daily free tier & transparent access)',
+      traditionalCoaching: '₹1,80,000 – ₹2,50,000 + Delhi living expenses',
       unassisted: 'Book costs only'
     },
     {

@@ -75,21 +75,19 @@ export default function App() {
   };
 
   const handleScrollToSection = (id: string) => {
-    // Map legacy tool IDs if clicked from footer/CTA to either #features or launching the app
-    const toolMap: Record<string, WorkspaceTab> = {
-      'mains-evaluator': 'mains',
-      'prelims-engine': 'prelims',
-      'current-affairs': 'editorial',
-      'study-planner': 'planner',
+    // Map tool links from footer/CTA smoothly to on-page demonstration sections
+    const sectionMap: Record<string, string> = {
+      'mains-evaluator': 'interactive-demo',
+      'prelims-engine': 'interactive-demo',
+      'current-affairs': 'interactive-demo',
+      'study-planner': 'features',
+      'demo': 'interactive-demo',
+      'interactive-demo': 'interactive-demo',
     };
 
-    if (toolMap[id]) {
-      handleLaunchWorkspaceTool(toolMap[id]);
-      return;
-    }
-
-    setActiveSection(id);
-    const element = document.getElementById(id);
+    const targetId = sectionMap[id] || id;
+    setActiveSection(targetId);
+    const element = document.getElementById(targetId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
