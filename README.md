@@ -120,7 +120,7 @@ This frontend is architected with **strict TypeScript contracts (`src/types.ts`)
 
 ### Step 1: Configure Environment Variables
 
-Update `.env` (refer to `.env.example`):
+Update `.env` (optional, for connecting an external backend):
 
 ```bash
 # Base URL of your existing backend API
