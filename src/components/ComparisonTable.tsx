@@ -42,7 +42,7 @@ export const ComparisonTable: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-stone-50 border-b border-stone-200">
+    <section id="comparison" className="py-16 md:py-24 bg-stone-50 border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="max-w-3xl mb-12">

@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, Sparkles, BookOpen, Clock, Target, Compass, Award, ShieldCheck, ChevronRight } from 'lucide-react';
 import { TRUST_METRICS } from '../data/mockData';
+import { WorkspaceTab } from './FeaturesOverview';
 
 interface HeroProps {
   onScrollToSection: (id: string) => void;
   onOpenAuth: (mode: 'signin' | 'signup') => void;
+  onLaunchWorkspaceTool: (tab: WorkspaceTab) => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onScrollToSection, onOpenAuth }) => {
+export const Hero: React.FC<HeroProps> = ({
+  onScrollToSection,
+  onOpenAuth,
+  onLaunchWorkspaceTool,
+}) => {
   const [activeTab, setActiveTab] = useState<'mains' | 'prelims' | 'editorial'>('mains');
 
   return (
@@ -68,18 +74,18 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection, onOpenAuth }) => 
             {/* CTAs */}
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
-                onClick={() => onScrollToSection('mains-evaluator')}
+                onClick={() => onLaunchWorkspaceTool('mains')}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-stone-900 hover:bg-stone-800 rounded-md transition-colors shadow-sm cursor-pointer whitespace-nowrap"
               >
-                <span>Evaluate Your Answer Free</span>
+                <span>Launch App & Start Practice</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
               <button
-                onClick={() => onScrollToSection('prelims-engine')}
+                onClick={() => onScrollToSection('features')}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-stone-800 bg-white hover:bg-stone-100 border border-stone-300 rounded-md transition-colors cursor-pointer whitespace-nowrap"
               >
-                <span>Explore Prelims Engine</span>
+                <span>Explore Key Features</span>
               </button>
             </div>
 
@@ -175,10 +181,10 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection, onOpenAuth }) => 
                     <div className="pt-1 flex items-center justify-between">
                       <span className="text-xs text-stone-500">Evaluation completed in 1.4s</span>
                       <button
-                        onClick={() => onScrollToSection('mains-evaluator')}
+                        onClick={() => onLaunchWorkspaceTool('mains')}
                         className="text-xs font-semibold text-amber-900 hover:text-amber-950 inline-flex items-center gap-1 cursor-pointer"
                       >
-                        <span>Full Rubric & Feedback</span>
+                        <span>Open in App</span>
                         <ChevronRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -215,10 +221,10 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection, onOpenAuth }) => 
                     <div className="pt-1 flex items-center justify-between">
                       <span className="text-xs text-stone-500">Source: M. Laxmikanth Ch. 10</span>
                       <button
-                        onClick={() => onScrollToSection('prelims-engine')}
+                        onClick={() => onLaunchWorkspaceTool('prelims')}
                         className="text-xs font-semibold text-amber-900 hover:text-amber-950 inline-flex items-center gap-1 cursor-pointer"
                       >
-                        <span>Launch Mock Test</span>
+                        <span>Open in App</span>
                         <ChevronRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -249,10 +255,10 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection, onOpenAuth }) => 
                     <div className="pt-1 flex items-center justify-between">
                       <span className="text-xs text-emerald-800 font-medium">3 Mains Points · 2 Prelims Facts</span>
                       <button
-                        onClick={() => onScrollToSection('current-affairs')}
+                        onClick={() => onLaunchWorkspaceTool('editorial')}
                         className="text-xs font-semibold text-amber-900 hover:text-amber-950 inline-flex items-center gap-1 cursor-pointer"
                       >
-                        <span>Read Full Digest</span>
+                        <span>Open in App</span>
                         <ChevronRight className="w-3.5 h-3.5" />
                       </button>
                     </div>

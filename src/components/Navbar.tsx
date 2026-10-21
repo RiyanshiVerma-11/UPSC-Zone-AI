@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
-import { BookOpen, Compass, FileText, CheckCircle2, Calendar, Award, Menu, X, ArrowRight, Shield } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
   onOpenAuth: (mode: 'signin' | 'signup') => void;
+  onLaunchApp: () => void;
   onScrollToSection: (id: string) => void;
   activeSection: string;
+  isAuthenticated?: boolean;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth, onScrollToSection, activeSection }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onOpenAuth,
+  onLaunchApp,
+  onScrollToSection,
+  activeSection,
+  isAuthenticated,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { id: 'mains-evaluator', label: 'Mains AI' },
-    { id: 'prelims-engine', label: 'Prelims PYQ' },
-    { id: 'current-affairs', label: 'Daily Digest' },
-    { id: 'study-planner', label: 'Study Planner' },
-    { id: 'rankers', label: 'Rankers' }
+    { id: 'features', label: 'Key Features' },
+    { id: 'how-it-works', label: 'How It Works' },
+    { id: 'rankers', label: 'Topper Proof' },
+    { id: 'comparison', label: 'Why UPSC ZONE AI' },
   ];
 
   const handleNavClick = (id: string) => {
@@ -42,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth, onScrollToSection, a
           </span>
         </a>
 
-        {/* Zone 2: 4-6 clean text navigation links */}
+        {/* Zone 2: 4 clean text navigation links */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
           {navLinks.map((link) => (
             <button
@@ -60,19 +67,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth, onScrollToSection, a
           ))}
         </nav>
 
-        {/* Zone 3: 1-2 primary actions */}
+        {/* Zone 3: Sign In + Launch App */}
         <div className="flex items-center gap-3">
+          {!isAuthenticated && (
+            <button
+              onClick={() => onOpenAuth('signin')}
+              className="hidden sm:inline-flex text-xs font-semibold text-stone-700 hover:text-stone-950 px-3 py-2 rounded transition-colors cursor-pointer"
+            >
+              Sign In
+            </button>
+          )}
           <button
-            onClick={() => onOpenAuth('signin')}
-            className="hidden sm:inline-flex text-xs font-semibold text-stone-700 hover:text-stone-950 px-3 py-2 rounded transition-colors cursor-pointer"
-          >
-            Sign In
-          </button>
-          <button
-            onClick={() => onScrollToSection('mains-evaluator')}
+            onClick={onLaunchApp}
             className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-stone-900 hover:bg-stone-800 rounded-md transition-colors shadow-xs whitespace-nowrap cursor-pointer focus-visible:ring-2 focus-visible:ring-amber-800"
           >
-            <span>Start Practice</span>
+            <span>{isAuthenticated ? 'Enter Workspace' : 'Launch App'}</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
 
@@ -111,10 +120,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth, onScrollToSection, a
               Sign In to Your Account
             </button>
             <button
-              onClick={() => { setMobileMenuOpen(false); onOpenAuth('signup'); }}
+              onClick={() => { setMobileMenuOpen(false); onLaunchApp(); }}
               className="w-full py-2.5 text-center text-sm font-semibold text-white bg-stone-900 hover:bg-stone-800 rounded-md cursor-pointer"
             >
-              Create Free Aspirant Profile
+              Launch UPSC ZONE AI App →
             </button>
           </div>
         </div>
