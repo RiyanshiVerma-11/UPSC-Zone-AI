@@ -155,12 +155,6 @@ export const Hero: React.FC<HeroProps> = ({
                 <span className="text-stone-500">Old Rajinder Nagar, Mukherjee Nagar & across India</span>
               </div>
             </div>
-
-            {/* Quiet trust badge */}
-            <div className="text-xs text-stone-500 flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-stone-400 shrink-0" />
-              <span>Zero-hallucination verification backed by Constitution articles & official commission keys.</span>
-            </div>
           </div>
 
           {/* Right Column: Ultra-Interactive Cockpit Preview */}
